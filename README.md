@@ -1,1 +1,0 @@
-# sos-infarto-fe
