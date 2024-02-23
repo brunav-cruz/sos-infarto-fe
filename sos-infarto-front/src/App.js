@@ -11,7 +11,6 @@ function App() {
     <Routes>
       <Route path="" element={<Navigate to="/Home" />} />
       <Route default path="/Home" element={<Home />} />
-     
     </Routes>
   </BrowserRouter>
   );
