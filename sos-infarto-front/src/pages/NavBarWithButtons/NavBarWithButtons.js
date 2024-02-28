@@ -28,7 +28,7 @@ const theme = createTheme({
     },
 });
 
-function NavBar(props) {
+function NavBarWithButtons(props) {
     const location = useLocation();
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -53,6 +53,43 @@ function NavBar(props) {
                             </IconButton>
                         </Toolbar>
                     </AppBar>
+                    {/* vou ajeitar aqui depois, fiz assim pra apresentar logo e to aprendendo a mexer com react ainda -gabe */}
+                    <Box
+                        height="100vh"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        p={4}
+                        sx={{
+                            bgcolor:"#a6dced"
+                        }}
+                    >
+                    <Grid container spacing={4} justifyContent="center">
+                        <Grid item xs={12} md={6} lg={4}>
+                            <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+                                <Button startIcon={<img src={icone_localizacao} />} sx={{ backgroundColor: 'white', color: 'black', height: '200px'}} fullWidth>
+                                    <h1>Localizar Unidade de Saúde</h1>
+                                </Button>
+                            </ButtonGroup>
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={4}>
+                            <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+                                <Button startIcon={<img src={icone_sintomas} />} sx={{ backgroundColor: 'white', color: 'black', height: '200px'}} fullWidth>
+                                    <h1>Identificar sinais de infarto</h1>
+                                </Button>
+                            </ButtonGroup>
+                        </Grid>
+                        {/* <Grid item xs={12} md={6} lg={4}>
+                            <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+                                <Button startIcon={<img src={icone_exclamacao} />} sx={{ backgroundColor: 'white', color: 'black', height: '200px'}} fullWidth>
+                                    <h1>Ligar para a emergencia</h1>
+                                </Button>
+                            </ButtonGroup>
+                        </Grid> */}
+                    </Grid>
+                        
+                    </Box>
+                    {/* final do meu codigo aqui */}
                 </Box>
                 {props.children}
             </ThemeProvider>
@@ -64,6 +101,12 @@ function NavBar(props) {
                         </ListItemIcon>
                         <ListItemText primary="Perfil" />
                     </ListItem>
+                    {/* <ListItem button>
+                        <ListItemIcon>
+                            <img src={icone_identificarsinais} alt="Identificar sinais de infarto" className="icon" />
+                        </ListItemIcon>
+                        <ListItemText primary="Identificar sinais de infarto" />
+                    </ListItem> */}
                     <ListItem button>
                         <ListItemIcon>
                             <img src={icone_historico} alt="Histórico clínico" className="icon" />
@@ -94,4 +137,4 @@ function NavBar(props) {
     );
 }
 
-export default NavBar;
+export default NavBarWithButtons;

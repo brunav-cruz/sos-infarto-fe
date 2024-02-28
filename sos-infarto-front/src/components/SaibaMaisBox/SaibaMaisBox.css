@@ -1,0 +1,35 @@
+.container-saiba-mais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 15px;
+    background-color: whitesmoke;
+}
+
+.container-saiba-mais p {
+    max-width: 80ch;
+    margin-top: 1.5em;
+    color: black;
+}
+
+.saiba-mais-titulo-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.saiba-mais-titulo-img img{
+    max-width: 150px;
+    border: solid 3px #1c86cc;
+    border-radius: 100px;
+}
+.saiba-mais-titulo-img h2{
+    font-size: 22px;
+    margin: 0 0 0.5em 0;
+   
+}
