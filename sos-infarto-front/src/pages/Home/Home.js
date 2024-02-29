@@ -1,14 +1,14 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
-import SaibaMaisBox from '../../components/SaibaMaisBox/SaibaMaisBox'
-import SaibaMais from '../SaibaMais/SaibaMais';
-import NavBarWithButtons from "../NavBarWithButtons/NavBarWithButtons"
+import HomeButtons from '../../components/HomeButtons/HomeButtons'
+
 
 function Home() {
 
     return (
         <div>
-            <NavBarWithButtons/>
+            <NavBar/>
+            <HomeButtons/>
         </div>
 
     );

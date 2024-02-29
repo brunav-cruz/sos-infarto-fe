@@ -4,7 +4,6 @@ import {ButtonGroup ,AppBar, Box, Toolbar, IconButton, Typography, Button, Drawe
 import { useLocation } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import './NavBar.scss';
-import './Buttons.scss';
 import icon from '../../assets/icon.png'
 import logo from '../../assets/logo_app_horizontal.png';
 import icone_sair from '../../assets/sair.png';
@@ -16,9 +15,6 @@ import icone_perfil from '../../assets/icone_perfil.png';
 import icone_saiba from '../../assets/icone_saiba+.png';
 import icone_historico from '../../assets/icone_historico.png';
 import icone_sobre from '../../assets/icone_sobre.png';
-import icone_sintomas from '../../assets/frequencia-cardiaca (4).png'
-import icone_localizacao from '../../assets/localizacao64.png'
-import icone_exclamacao from '../../assets/exclamacao64.png'
 
 const theme = createTheme({
     palette: {
