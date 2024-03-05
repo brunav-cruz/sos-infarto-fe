@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {ButtonGroup ,AppBar, Box, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemIcon, ListItemText, Grid } from '@mui/material';
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import './NavBar.scss';
 import icon from '../../assets/icon.png'
@@ -25,7 +25,8 @@ const theme = createTheme({
 });
 
 function NavBar(props) {
-    const location = useLocation();
+    const location = useLocation();  
+
     const [showSidebar, setShowSidebar] = useState(false);
 
     const toggleSidebar = () => {
@@ -42,7 +43,9 @@ function NavBar(props) {
                                 <img src={menu} alt="Icon_sair" style={{ width: '30px', height: '30px' }} />
                             </IconButton>
                             <div className="logo-container" sx={{ justifyContent: 'center' }}>
-                                <img src={logo} alt="Icon" style={{ width: '250px', height: '50px' }} />
+                                <Link to="/Home">
+                                    <img src={logo} alt="Icon" style={{ width: '250px', height: '50px' }} />
+                                </Link>
                             </div>
                             <IconButton>
                                 <img src={icone_sair} alt="Icon_sair" style={{ width: '30px', height: '30px' }} />
@@ -66,11 +69,11 @@ function NavBar(props) {
                         </ListItemIcon>
                         <ListItemText primary="Histórico clínico" />
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button component={Link} to="/saibaMais">
                         <ListItemIcon>
                             <img src={icone_saiba} alt="Saiba mais" className="icon" />
                         </ListItemIcon>
-                        <ListItemText primary="Saiba mais" />
+                        <ListItemText primary="Saiba mais"/>
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>

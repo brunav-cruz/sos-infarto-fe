@@ -1,9 +1,12 @@
 import React from "react";
 import { ButtonGroup, Box, Grid, Button } from "@mui/material";
+import { useLocation, Link } from "react-router-dom";
 // import './HomeButtons.css';
 import icone_sintomas from "../../assets/frequencia-cardiaca.png";
 import icone_localizacao from "../../assets/urgencia.png";
 import icone_exclamacao from "../../assets/exclamacao64.png";
+import LocalSaude from '../../pages/LocalSaude/LocalSaude';
+
 
 const HomeButtons = (props) => {
   return (
@@ -15,11 +18,14 @@ const HomeButtons = (props) => {
       p={4}
       sx={{
         bgcolor: "#a6dced",
+        overflow: "hidden",
       }}
     >
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} md={6} lg={4}>
           <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+          <Link to="/LocalSaude">
+
             <Button
               startIcon={
                 <img
@@ -32,6 +38,7 @@ const HomeButtons = (props) => {
             >
               <h1>Localizar Unidade de Saúde</h1>
             </Button>
+          </Link>
           </ButtonGroup>
         </Grid>
         <Grid item xs={12} md={6} lg={4}>

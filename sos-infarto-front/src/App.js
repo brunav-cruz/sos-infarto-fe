@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Home from './pages/Home/Home';
+import SaibaMais from './pages/SaibaMais/SaibaMais';
+import LocalSaude from './pages/LocalSaude/LocalSaude'
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
     <Routes>
       <Route path="" element={<Navigate to="/Home" />} />
       <Route default path="/Home" element={<Home />} />
+      <Route path="/SaibaMais" element={<SaibaMais />} />
+      <Route path="/LocalSaude" element={<LocalSaude />} />
+
     </Routes>
   </BrowserRouter>
   );
