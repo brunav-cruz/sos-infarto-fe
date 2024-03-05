@@ -5,7 +5,7 @@ import icone_sintomas from "../../assets/frequencia-cardiaca.png";
 import icone_localizacao from "../../assets/urgencia.png";
 import icone_exclamacao from "../../assets/exclamacao64.png";
 
-const HomeButtons = (props) => {
+const HomeButtons = () => {
   return (
     <Box
       height="100vh"
