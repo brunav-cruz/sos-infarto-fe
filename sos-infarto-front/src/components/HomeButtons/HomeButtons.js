@@ -8,7 +8,7 @@ import icone_exclamacao from "../../assets/exclamacao64.png";
 import LocalSaude from '../../pages/LocalSaude/LocalSaude';
 
 
-const HomeButtons = (props) => {
+const HomeButtons = () => {
   return (
     <Box
       height="100vh"

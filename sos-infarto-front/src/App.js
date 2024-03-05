@@ -5,6 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from './pages/Home/Home';
 import SaibaMais from './pages/SaibaMais/SaibaMais';
 import LocalSaude from './pages/LocalSaude/LocalSaude'
+import FormularioRisco from './pages/Formulario/FormularioRisco'
+
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route default path="/Home" element={<Home />} />
       <Route path="/SaibaMais" element={<SaibaMais />} />
       <Route path="/LocalSaude" element={<LocalSaude />} />
+      <Route path="" element={<Navigate to="/Formulario" />} />
+      <Route default path="/Formulario" element={<FormularioRisco />} />
 
     </Routes>
   </BrowserRouter>
