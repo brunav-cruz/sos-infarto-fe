@@ -19,7 +19,7 @@ import icone_sobre from '../../assets/icone_sobre.png';
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#005eff "
+            main: "#005eff"
         }
     },
 });

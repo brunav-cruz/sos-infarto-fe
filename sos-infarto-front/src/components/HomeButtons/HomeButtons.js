@@ -6,6 +6,7 @@ import icone_sintomas from "../../assets/frequencia-cardiaca.png";
 import icone_localizacao from "../../assets/urgencia.png";
 import icone_exclamacao from "../../assets/exclamacao64.png";
 import LocalSaude from '../../pages/LocalSaude/LocalSaude';
+import FormularioRisco from '../../pages/Formulario/FormularioRisco'
 
 
 const HomeButtons = () => {
@@ -43,6 +44,8 @@ const HomeButtons = () => {
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+          <Link to="/Formulario">
+
             <Button
               startIcon={
                 <img
@@ -55,6 +58,7 @@ const HomeButtons = () => {
             >
               <h1>Identificar sinais de infarto</h1>
             </Button>
+            </Link>
           </ButtonGroup>
         </Grid>
         <Grid item xs={12} md={6} lg={4}>

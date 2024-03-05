@@ -6,11 +6,10 @@ function RiscoButton(){
         <Button variant="contained" color="success"
             sx={{
                 display: 'flex',
-                flexDirection: 'column',
                 margin: 'auto',
                 marginBottom: '40px',
-                width: '40%',
-                height: '100px',
+                width: '40vh',
+                height: '60px',
                 fontSize: '20px',
                 fontFamily: 'Arial, sans-serif',
                 fontWeight: 'bold',
