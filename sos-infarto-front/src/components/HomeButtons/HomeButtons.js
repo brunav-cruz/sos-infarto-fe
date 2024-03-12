@@ -5,11 +5,17 @@ import { useLocation, Link } from "react-router-dom";
 import icone_sintomas from "../../assets/frequencia-cardiaca.png";
 import icone_localizacao from "../../assets/urgencia.png";
 import icone_exclamacao from "../../assets/exclamacao64.png";
-import LocalSaude from '../../pages/LocalSaude/LocalSaude';
-import FormularioRisco from '../../pages/Formulario/FormularioRisco'
-
+import icone_indentificarsinais from "../../assets/icone_identificarsinais.png";
+import audio from "../../assets/alerta-emergencia.mp3";
+import LocalSaude from "../../pages/LocalSaude/LocalSaude";
+import FormularioRisco from "../../pages/Formulario/FormularioRisco";
 
 const HomeButtons = () => {
+  const handleButtonClick = () => {
+    const alertSound = new Audio(audio);
+    alertSound.play();
+  };
+
   return (
     <Box
       height="100vh"
@@ -24,60 +30,91 @@ const HomeButtons = () => {
     >
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} md={6} lg={4}>
-          <ButtonGroup variant="contained" orientation="vertical" fullWidth>
-          <Link to="/LocalSaude">
-
-            <Button
-              startIcon={
-                <img
-                  style={{ width: "150px", height: "150px" }}
-                  src={icone_localizacao}
-                />
-              }
-              sx={{ backgroundColor: "white", color: "black", height: "200px" }}
-              fullWidth
-            >
-              <h1>Localizar Unidade de Saúde</h1>
-            </Button>
-          </Link>
-          </ButtonGroup>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          <ButtonGroup variant="contained" orientation="vertical" fullWidth>
-          <Link to="/Formulario">
-
-            <Button
-              startIcon={
-                <img
-                  style={{ width: "100px", height: "100px" }}
-                  src={icone_sintomas}
-                />
-              }
-              sx={{ backgroundColor: "white", color: "black", height: "200px" }}
-              fullWidth
-            >
-              <h1>Identificar sinais de infarto</h1>
-            </Button>
+          <ButtonGroup
+            variant="contained"
+            orientation="vertical"
+            fullWidth
+            style={{ maxHeight: "80%" }}
+          >
+            <Link to="/LocalSaude">
+              <Button
+                startIcon={
+                  <img
+                    style={{ width: "150px", height: "150px" }}
+                    src={icone_localizacao}
+                  />
+                }
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  height: "200px",
+                }}
+                fullWidth
+              >
+                <h1>Localizar Unidade de Saúde</h1>
+              </Button>
             </Link>
           </ButtonGroup>
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <ButtonGroup variant="contained" orientation="vertical" fullWidth>
-          <Link to="/PrimeirosSocorros">
-
+            <Link to="/Formulario">
+              <Button
+                startIcon={
+                  <img
+                    style={{ width: "100px", height: "100px" }}
+                    src={icone_sintomas}
+                  />
+                }
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  height: "200px",
+                }}
+                fullWidth
+              >
+                <h1>Identificar sinais de infarto</h1>
+              </Button>
+            </Link>
+          </ButtonGroup>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+            <Link to="/PrimeirosSocorros">
+              <Button
+                startIcon={
+                  <img
+                    style={{ width: "90px", height: "90px" }}
+                    src={icone_indentificarsinais}
+                  />
+                }
+                sx={{
+                  backgroundColor: "white",
+                  color: "black",
+                  height: "200px",
+                }}
+                fullWidth
+              >
+                <h1>Primeiros Socorros</h1>
+              </Button>
+            </Link>
+          </ButtonGroup>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <ButtonGroup variant="contained" orientation="vertical" fullWidth>
             <Button
+              onClick={handleButtonClick}
               startIcon={
                 <img
                   style={{ width: "100px", height: "100px" }}
-                  src={icone_sintomas}
+                  src={icone_exclamacao}
                 />
               }
-              sx={{ backgroundColor: "white", color: "black", height: "200px" }}
+              sx={{ backgroundColor: "red", color: "black", height: "200px" }}
               fullWidth
             >
-              <h1>Primeiros Socorros</h1>
+              <h1>Botão de emergência</h1>
             </Button>
-            </Link>
           </ButtonGroup>
         </Grid>
       </Grid>
