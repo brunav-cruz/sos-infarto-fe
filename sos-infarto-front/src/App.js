@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import SaibaMais from './pages/SaibaMais/SaibaMais';
 import LocalSaude from './pages/LocalSaude/LocalSaude'
 import FormularioRisco from './pages/Formulario/FormularioRisco'
+import PrimeirosSocorros from './components/PrimeirosSocorros/PrimeirosSocorros';
 
 
 function App() {
@@ -16,10 +17,10 @@ function App() {
       <Route path="" element={<Navigate to="/Home" />} />
       <Route default path="/Home" element={<Home />} />
       <Route path="/SaibaMais" element={<SaibaMais />} />
+      <Route path="/PrimeirosSocorros" element={<PrimeirosSocorros />} />
       <Route path="/LocalSaude" element={<LocalSaude />} />
       <Route path="" element={<Navigate to="/Formulario" />} />
       <Route default path="/Formulario" element={<FormularioRisco />} />
-
     </Routes>
   </BrowserRouter>
   );

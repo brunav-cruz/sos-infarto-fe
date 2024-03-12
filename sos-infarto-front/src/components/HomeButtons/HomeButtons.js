@@ -63,18 +63,21 @@ const HomeButtons = () => {
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+          <Link to="/PrimeirosSocorros">
+
             <Button
               startIcon={
                 <img
                   style={{ width: "100px", height: "100px" }}
-                  src={icone_exclamacao}
+                  src={icone_sintomas}
                 />
               }
               sx={{ backgroundColor: "white", color: "black", height: "200px" }}
               fullWidth
             >
-              <h1>Ligar para a emergencia</h1>
+              <h1>Primeiros Socorros</h1>
             </Button>
+            </Link>
           </ButtonGroup>
         </Grid>
       </Grid>
