@@ -1,16 +1,15 @@
 import React from "react";
 import { ButtonGroup, Box, Grid, Button } from "@mui/material";
 import { useLocation, Link } from "react-router-dom";
-// import './HomeButtons.css';
 import icone_sintomas from "../../assets/frequencia-cardiaca.png";
 import icone_localizacao from "../../assets/urgencia.png";
 import icone_exclamacao from "../../assets/exclamacao64.png";
 import icone_indentificarsinais from "../../assets/icone_identificarsinais.png";
 import audio from "../../assets/alerta-emergencia.mp3";
-import LocalSaude from "../../pages/LocalSaude/LocalSaude";
-import FormularioRisco from "../../pages/Formulario/FormularioRisco";
 
 const HomeButtons = () => {
+
+  const isMobile = window.innerWidth <= 768;
   const handleButtonClick = () => {
     const alertSound = new Audio(audio);
     alertSound.play();
@@ -101,20 +100,40 @@ const HomeButtons = () => {
           </ButtonGroup>
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
-          <ButtonGroup variant="contained" orientation="vertical" fullWidth>
-            <Button
-              onClick={handleButtonClick}
-              startIcon={
-                <img
-                  style={{ width: "100px", height: "100px" }}
-                  src={icone_exclamacao}
-                />
-              }
-              sx={{ backgroundColor: "red", color: "black", height: "200px" }}
-              fullWidth
-            >
-              <h1>Botão de emergência</h1>
-            </Button>
+        <ButtonGroup variant="contained" orientation="vertical" fullWidth>
+            {isMobile ? (
+              <a href="tel:192">
+                <Button
+                  onClick={handleButtonClick}
+                  startIcon={
+                    <img
+                      style={{ width: '100px', height: '100px' }}
+                      src={icone_exclamacao}
+                      alt="exclamation icon"
+                    />
+                  }
+                  sx={{ backgroundColor: 'red', color: 'black', height: '200px' }}
+                  fullWidth
+                >
+                  <h1>Botão de emergência</h1>
+                </Button>
+              </a>
+            ) : (
+              <Button
+                onClick={handleButtonClick}
+                startIcon={
+                  <img
+                    style={{ width: '100px', height: '100px' }}
+                    src={icone_exclamacao}
+                    alt="exclamation icon"
+                  />
+                }
+                sx={{ backgroundColor: 'red', color: 'black', height: '200px' }}
+                fullWidth
+              >
+                <h1>Botão de emergência</h1>
+              </Button>
+            )}
           </ButtonGroup>
         </Grid>
       </Grid>
