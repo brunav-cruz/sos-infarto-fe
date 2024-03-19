@@ -4,30 +4,26 @@ import {
   Checkbox,
   FormGroup,
   FormControlLabel,
+  FormControl,
+  FormLabel,
   Button,
+  RadioGroup,
+  Radio
 } from "@mui/material";
-import RiscoButton from "./RiscoButton";
+
 
 function RiscoForm() {
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
-  const [groupVisibility, setGroupVisibility] = useState({});
   const [sintomas, setSintomas] = useState([]);
 
-  const toggleGroupVisibility = (groupName) => {
-    setGroupVisibility({
-      ...groupVisibility,
-      [groupName]: !groupVisibility[groupName],
-    });
-  };
+
 
   const handleChange = (event) => {
     const { checked } = event.target;
-
     handleSintoma(event);
     setIsChecked(checked);
     setIsChecked2(false);
-    toggleGroupVisibility("Dor no peito");
   };
 
   const handleSintoma = (event) => {
@@ -52,7 +48,7 @@ function RiscoForm() {
 
     setSintomas(newSintomas);
     setIsChecked2(event.target.checked);
-    toggleGroupVisibility("Dor do tipo que se espalha");
+  
   };
 
   const calcSinais = (sintomas) => {
@@ -148,7 +144,7 @@ function RiscoForm() {
             />
           </div>
 
-          {groupVisibility["Dor no peito"] && (
+          {isChecked && (
             <div style={{ display: "flex", flexDirection: "column" }}>
               <FormControlLabel
                 control={
@@ -184,7 +180,7 @@ function RiscoForm() {
               />
             </div>
           )}
-          {groupVisibility["Dor do tipo que se espalha"] && (
+          {isChecked2 && (
             <div style={{ display: "flex", flexDirection: "column" }}>
               <FormControlLabel
                 control={
@@ -246,6 +242,22 @@ function RiscoForm() {
             label="Tontura"
           />
         </FormGroup>
+        <div
+          style={{
+            fontWeight: "800",
+            fontSize: "23px",
+            fontFamily: "Arial, sans-serif",
+            "textAlign":"center"
+          }}
+        >
+          A QUANTO TEMPO ESTÁ SENTINDO?
+        </div>
+        <FormControl>
+          <RadioGroup name="radio-buttons-group">
+            <FormControlLabel value="+20min" control={<Radio />} label="Mais de 20 minutos" />
+            <FormControlLabel value="-20min" control={<Radio />} label="Menos de 20 minutos" />
+          </RadioGroup>
+      </FormControl>
       </Box>
       <Button
         onClick={() => calcSinais(sintomas)}
